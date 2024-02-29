@@ -28,23 +28,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="li-product-remove">
-                                        <input type="checkbox" >
-                                    </td>
-                                    <td class="li-product-thumbnail"><a href="#"><img src="images/product/small-size/5.jpg" alt="Li's Product Image"></a></td>
-                                    <td class="li-product-name"><a href="#">Accusantium dolorem1</a></td>
-                                    <td class="li-product-price"><span class="amount">$46.80</span></td>
-                                    <td class="quantity">
-                                        <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" value="1" type="text">
-                                            <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                            <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                        </div>
-                                    </td>
-                                    <td class="product-subtotal"><span class="amount">$70.00</span></td>
-                                    <td class="li-product-remove"><i class="fa-solid fa-trash"></i></td>
-                                </tr>
+                                <?php foreach ($data['cart'] as $item) {
+                                    echo "
+                                        <tr>
+                                            <td class='li-product-remove'>
+                                                <input type='checkbox' >
+                                            </td>
+                                            <td class='li-product-thumbnail'><a href='#'><img src='public/img/phone_image/". $item['image'] ."' alt='Li's Product Image'></a></td>
+                                            <td class='li-product-name'><a href='#'>". $item['name'] ."</a></td>
+                                            <td class='li-product-price'><span class='amount'><span>đ</span>" . $item['price'] ." </span></td>
+                                            <td class='quantity'>
+                                                <div class='cart-plus-minus'>
+                                                    <input class='cart-plus-minus-box' id='ip-quantity' data-id='". $item['id'] ."' value='". $item['quantity'] ."' type='text'>
+                                                    <div class='dec qtybutton' id='qtybutton-add'><i class='fa fa-angle-down'></i></div>
+                                                    <div class='inc qtybutton' id='qtybutton-sub'><i class='fa fa-angle-up'></i></div>
+                                                </div>
+                                            </td>
+                                            <td class='product-subtotal'><span class='amount'><span>đ</span>".$item['quantity']*$item['price']."</span></td>
+                                            <td class='li-product-remove'><i class='fa-solid fa-trash'></i></td>
+                                        </tr>";
+                                } ?>
                             </tbody>
                         </table>
                     </div>

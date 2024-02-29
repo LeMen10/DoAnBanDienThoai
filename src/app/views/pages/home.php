@@ -57,7 +57,7 @@
                                 <!-- single-product-wrap start -->
                                 <div class="single-product-wrap">
                                     <div class="product-image">
-                                        <a href="">
+                                        <a href="index.php?ctrl=detail">
                                             <img src="public/img/product/10.jpg" alt="Li's Product Image">
                                         </a>
                                     </div>
@@ -77,8 +77,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <h4><a class="product_name" href="single-product.html">Accusantium
-                                                    dolorem1</a></h4>
+                                            <h4><a class="product_name" href="">Accusantium dolorem1</a></h4>
                                             <div class="price-box">
                                                 <span class="new-price">$46.80</span>
                                             </div>

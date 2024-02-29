@@ -4182,8 +4182,13 @@ li.right-menu .cat-mega-menu-2>li {
 .table-content table td.li-product-price {
     font-size: 16px;
     font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 }
-
+.li-product-price span span, .product-subtotal span span{
+    font-size: 13px;
+    text-decoration: underline;
+    color: #202020;
+}
 .table-content table td.li-product-stock-status span.in-stock,
 .table-content table td.li-product-stock-status span.out-stock {
     color: #fed700;
@@ -6484,6 +6489,11 @@ span.required {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* cart */
+.li-product-thumbnail a img{
+    width: 68px;
 }
 
 /*----------------------------------------------------------------------------------------------------*/
