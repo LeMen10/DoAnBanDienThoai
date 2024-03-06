@@ -1333,8 +1333,10 @@ textarea:focus {
     margin: 0 0 15px 0;
 }
 
+
 .product-details-ref {
     font-size: 13px;
+    margin-right: 50px;
     color: #7a7a7a;
 }
 
@@ -1347,6 +1349,22 @@ textarea:focus {
     font-size: 24px;
     line-height: 27px;
     color: #e80f0f;
+}
+.product-details-view-content .product-info .price-box .new-price span{
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    color: #e80f0f;
+}
+.product-variants .produt-variants-size, .product-variants .produt-variants-color {
+    margin-right: 30px;
+}
+
+.product-variants .produt-variants-size label, .product-variants .produt-variants-color label {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .product-details-view-content .content-center .product-variants {
@@ -5984,8 +6002,26 @@ span.required {
 .product-details-view-content .product-desc {
     border-bottom: 1px solid #e1e1e1;
     margin-bottom: 25px;
+    max-Height: 10em;
+    overflow: hidden;
+    position: relative;
+}
+#moreInfoBtn {
+    display: inline-block;
+    padding: 5px 10px;
+    color: blue; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    position: absolute;
 }
 
+#moreInfoBtn:hover {
+    text-decoration: underline;
+}
 .product-details-view-content .product-desc p {
     margin-bottom: 20px;
 }
