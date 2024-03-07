@@ -23,6 +23,8 @@ class DetailController extends Controller
     {
         if($_SERVER['REQUEST_METHOD'] == 'POST')
         {
+            
+            $minh = "1234567";
             $phoneID = $_POST['phoneID'];
             $sizeID = $_POST['sizeID'];
             $Colors =  $this->product_model->getAllColorSize($phoneID, $sizeID);
