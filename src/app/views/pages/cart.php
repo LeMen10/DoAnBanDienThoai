@@ -17,7 +17,7 @@
                             <thead>
                                 <tr>
                                     <th class="li-product-checkall">
-                                        <input type="checkbox" >
+                                        <input type="checkbox" class="checkall">
                                     </th>
                                     <th class="li-product-thumbnail">Images</th>
                                     <th class="cart-product-name">Product</th>
@@ -30,22 +30,22 @@
                             <tbody>
                                 <?php foreach ($data['cart'] as $item) {
                                     echo "
-                                        <tr>
+                                        <tr class='wrap-product-item' data-id='". $item['id'] ."'>
                                             <td class='li-product-remove'>
-                                                <input type='checkbox' >
+                                                <input type='checkbox' class='checkbox-cart'>
                                             </td>
                                             <td class='li-product-thumbnail'><a href='#'><img src='public/img/phone_image/". $item['image'] ."' alt='Li's Product Image'></a></td>
                                             <td class='li-product-name'><a href='#'>". $item['name'] ."</a></td>
-                                            <td class='li-product-price'><span class='amount'><span>đ</span>" . $item['price'] ." </span></td>
+                                            <td class='li-product-price'><span class='amount'><span class='currency-unit'>đ</span><span class='currency-price' data-id='". $item['id'] ."'>". $item['price']."</span></span></td>
                                             <td class='quantity'>
                                                 <div class='cart-plus-minus'>
-                                                    <input class='cart-plus-minus-box' id='ip-quantity' data-id='". $item['id'] ."' value='". $item['quantity'] ."' type='text'>
-                                                    <div class='dec qtybutton' id='qtybutton-add'><i class='fa fa-angle-down'></i></div>
-                                                    <div class='inc qtybutton' id='qtybutton-sub'><i class='fa fa-angle-up'></i></div>
+                                                    <input class='cart-plus-minus-box ip-quantity' data-id='". $item['id'] ."' value='". $item['quantity'] ."' type='text'>
+                                                    <div class='dec qtybutton qtybutton-add' data-id='". $item['id'] ."'><i class='fa fa-angle-down'></i></div>
+                                                    <div class='inc qtybutton qtybutton-sub' data-id='". $item['id'] ."'><i class='fa fa-angle-up'></i></div>
                                                 </div>
                                             </td>
-                                            <td class='product-subtotal'><span class='amount'><span>đ</span>".$item['quantity']*$item['price']."</span></td>
-                                            <td class='li-product-remove'><i class='fa-solid fa-trash'></i></td>
+                                            <td class='product-subtotal'><span class='amount' ><span class='currency-unit'>đ</span><span class='product-subtotal-value' data-id='".$item['id']."'>".$item['quantity']*$item['price']."</span></span></td>
+                                            <td class='li-product-remove button-delete' data-id='". $item['id'] ."'><i class='fa-solid fa-trash'></i></td>
                                         </tr>";
                                 } ?>
                             </tbody>
@@ -57,9 +57,14 @@
                                 <h2>Cart totals</h2>
                                 <div class="cart-page-content">
                                     <ul>
-                                        <li>Total <span>$130.00</span></li>
+                                        <li>Total 
+                                            <span>
+                                                <span class="currency-unit">đ</span>
+                                                <span class="total-price">0</span>
+                                            </span>
+                                        </li>
                                     </ul>
-                                    <a href="#">Checkout</a>
+                                    <a href="index.php?ctrl=checkout">Checkout</a>
                                 </div>
                                 
                             </div>
