@@ -1,5 +1,5 @@
 <?php
-$controller = ucfirst(strtolower($_REQUEST['ctrl'] ?? 'Home') . 'Controller');
+$controller = strtolower($_REQUEST['ctrl'] ?? 'home');
 $action = $_REQUEST['act'] ?? 'index';
 require './app/controllers/' . $controller . '.php';
 $controllerObject = new $controller();

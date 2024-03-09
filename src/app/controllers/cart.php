@@ -1,7 +1,7 @@
 <?php
 require './app/core/Controller.php';
 
-class CartController extends Controller
+class cart extends Controller
 {
     private $cart_model;
     public function __construct()

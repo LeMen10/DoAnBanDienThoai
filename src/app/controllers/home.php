@@ -1,7 +1,7 @@
 <?php
 require './app/core/Controller.php';
 
-class ContactController extends Controller
+class home extends Controller
 {
     private $product_model;
     public function __construct()
@@ -12,6 +12,9 @@ class ContactController extends Controller
     public function index()
     {
         // $products = $this->product_model->getAll();
-        return $this->view('main_layout', ['page' => 'contact']);
+        return $this->view('main_layout', ['page' => 'home']);
+    }
+    public function show()
+    {
     }
 }

@@ -1,7 +1,7 @@
 <?php
 require './app/core/Controller.php';
 
-class CheckoutController extends Controller
+class about extends Controller
 {
     private $product_model;
     public function __construct()
@@ -12,9 +12,6 @@ class CheckoutController extends Controller
     public function index()
     {
         // $products = $this->product_model->getAll();
-        return $this->view('main_layout', ['page' => 'checkout']);
-    }
-    public function show()
-    {
+        return $this->view('main_layout', ['page' => 'about']);
     }
 }

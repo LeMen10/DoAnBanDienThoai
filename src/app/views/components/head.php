@@ -6,6 +6,7 @@
     <title>thegioididong</title>
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/helper.css">
+    <link rel="stylesheet" href="public/css/admin.css">
     <link rel="stylesheet" href="public/css/main.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     <link rel="stylesheet" href="public/fontawesome/css/all.css">

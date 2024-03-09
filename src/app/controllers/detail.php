@@ -1,7 +1,7 @@
 <?php
 require './app/core/Controller.php';
 
-class DetailController extends Controller
+class detail extends Controller
 {
     private $product_model;
     public function __construct()

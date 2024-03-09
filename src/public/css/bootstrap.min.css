@@ -2205,7 +2205,7 @@ pre code {
 .form-control {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
+    padding: 1.17rem .55rem;
     font-size: 1rem;
     line-height: 1.5;
     color: #495057;
@@ -6638,7 +6638,7 @@ button.bg-danger:hover {
 }
 
 .bg-light {
-    background-color: #f8f9fa !important
+    background-color: #F3F6F9 !important
 }
 
 a.bg-light:focus,
@@ -6646,6 +6646,10 @@ a.bg-light:hover,
 button.bg-light:focus,
 button.bg-light:hover {
     background-color: #dae0e5 !important
+}
+
+.ms-auto {
+    margin-left: auto !important;
 }
 
 .bg-dark {
@@ -9926,6 +9930,9 @@ a.text-dark:hover {
     .table-bordered th {
         border: 1px solid #ddd !important
     }
+}
+.ms-4 {
+    margin-left: 1.5rem !important;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
