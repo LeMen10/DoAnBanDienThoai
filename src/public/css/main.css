@@ -4227,7 +4227,7 @@ li.right-menu .cat-mega-menu-2>li {
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
 }
-.li-product-price span span, .product-subtotal span span{
+.li-product-price span .currency-unit, .product-subtotal span .currency-unit{
     font-size: 13px;
     text-decoration: underline;
     color: #202020;
@@ -4907,6 +4907,11 @@ thead {
 
 .cart-page-content ul>li>span {
     float: right;
+}
+
+.cart-page-content ul>li>span .currency-unit {
+    text-decoration: underline;
+    font-size: 13px;
 }
 
 .cart-page-content li:last-child {
