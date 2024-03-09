@@ -1,5 +1,5 @@
 <?php
-require './database/connect.php';
+require './app/database/connect.php';
 
 class UserModel extends connect
 {

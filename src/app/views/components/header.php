@@ -25,7 +25,7 @@
                                 </a>
                             </li>
                             <li class="hm-wishlist">
-                                <a href="index.php?ctrl=auth&act=login">
+                                <a href="index.php?ctrl=login">
                                     <i class="fa-regular fa-user"></i>
                                 </a>
                             </li>
