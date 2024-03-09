@@ -1,18 +1,23 @@
+var phoneInfo = {phoneID: 0, sizeID: 0, colorID: 0, quantity: 0};
 $(document).ready(() => {
+    phoneInfo.phoneID = document.querySelector(`.product-desc`).getAttribute('data-id');
+    phoneInfo.sizeID = document.getElementById("sizeSelect").value;
+    phoneInfo.colorID = document.getElementById("colorSelect").value;
     document.getElementById("sizeSelect").addEventListener("change", handleSizeChange);
     document.getElementById("colorSelect").addEventListener("change", handleColorChange);
     document.getElementById("moreInfoBtn").addEventListener('click', handleMoreInformation);
+    document.addEventListener("DOMContentLoaded", addSliderEvent);
+    addSliderEvent();
 })
+
 function handleSizeChange() {
-    const phoneID = document.querySelector(`.product-desc`).getAttribute('data-id');
-    const sizeID = document.getElementById("sizeSelect").value;
-    loadAllColor(phoneID, sizeID);
+    phoneInfo.sizeID = document.getElementById("sizeSelect").value;
+    loadAllColor(phoneInfo.phoneID, phoneInfo.sizeID);
 }
 function handleColorChange() {
-    const phoneID = document.querySelector(`.product-desc`).getAttribute('data-id');
-    const sizeID = document.getElementById("sizeSelect").value;
-    const colorID = document.getElementById("colorSelect").value;
-    loadVariant(phoneID, sizeID, colorID);
+    phoneInfo.sizeID = document.getElementById("sizeSelect").value;
+    phoneInfo.colorID = document.getElementById("colorSelect").value;
+    loadVariant(phoneInfo.phoneID, phoneInfo.sizeID, phoneInfo.colorID);
 
 }
 function handleMoreInformation() {
@@ -26,6 +31,14 @@ function handleMoreInformation() {
         moreInfoBtn.textContent = 'Xem thêm';
     }
 }
+function handleIncreaseQuantity()
+{
+    var quantityInput = document.querySelector(".cart-plus-minus-box");
+    if(quantityInput.value > phoneInfo.quantity) return;
+    quantityInput.value += 1;
+}
+
+
 const loadAllColor = (phoneID, sizeID) => {
     return $.ajax({
         type: 'post',
@@ -69,6 +82,7 @@ const changeColorSelect = (Colors) => {
 }
 
 const changeVariant = (Variant) => {
+    phoneInfo.quantity = Variant["quantity"];
     const priceElement = document.getElementById('price-value');
     const quantityElement = document.getElementById('quantity-value');
     if (priceElement != null) priceElement.innerHTML = "<span>đ</span>" + Variant["price"];
@@ -79,4 +93,45 @@ function clearSelect(selectElement) {
     while (selectElement.options.length > 0) {
         selectElement.remove(0);
     }
+}
+
+
+function addSliderEvent()
+{
+    var currentSlide = 0;
+    var slides = document.querySelectorAll('.lg-image');
+    console.log(slides);
+    var totalSlides = slides.length;
+
+    // Hiển thị slide đầu tiên
+    slides[currentSlide].classList.add('active');
+
+    // Hàm chuyển đến slide tiếp theo
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % totalSlides;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Hàm chuyển đến slide trước đó
+    function prevSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        slides[currentSlide].classList.add('active');
+    }
+
+    // Thiết lập slider tự động
+    var intervalId = setInterval(nextSlide, 10000);
+
+    // Bắt sự kiện click cho nút Prev
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        clearInterval(intervalId); // Dừng slider tự động khi người dùng nhấp vào nút
+        prevSlide();
+    });
+
+    // Bắt sự kiện click cho nút Next
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        clearInterval(intervalId);
+        nextSlide();
+    });
 }

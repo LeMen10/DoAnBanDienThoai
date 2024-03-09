@@ -1318,7 +1318,32 @@ textarea:focus {
 .product-details-thumbs .sm-image img {
     width: 100%;
 }
+/* detail product slide image */
+.product-details-images .lg-image{
+    display: none;
+}
 
+.lg-image .active {
+    display: block;
+}
+.product-details-left .slider-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product-details-left .slider-controls button {
+    padding: 10px 20px; 
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.product-details-left .slider-controls button:hover {
+    background-color: #0056b3;
+}
 .product-details-thumbs .sm-image {
     cursor: pointer;
 }

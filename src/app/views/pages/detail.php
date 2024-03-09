@@ -27,6 +27,9 @@
                             }
                         }
                         echo $centerSlider;
+                        echo " <div class='slider-controls'>
+                        <button id='prevBtn'>Prev</button>
+                        <button id='nextBtn'>Next</button></div>";
                         echo "<div class='product-details-thumbs slider-thumbs-1'>".$bottomSlider."
                         </div>"
                         ?>
