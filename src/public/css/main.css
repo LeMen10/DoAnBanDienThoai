@@ -4767,6 +4767,10 @@ thead {
 .login-form .check-box input[type="checkbox"]:checked+label::after {
     opacity: 1;
 }
+.login-form .error{
+    display: none;
+    color: red;
+}
 
 /*-- Place Order --*/
 .register-button {
